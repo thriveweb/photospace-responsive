@@ -50,7 +50,7 @@ See a [demo here](http://thriveweb.com.au/the-lab/photospace-responsive/ "Photos
 == Changelog ==
 
 = 2.0.0 =
-* Rebuild in new modern plugin template
+* Rebuild plugin with a new modern plugin template thanks to Hugh Lashbrooke! https://github.com/hlashbrooke/WordPress-Plugin-Template
 
 = 1.1.8 =
 * Security update

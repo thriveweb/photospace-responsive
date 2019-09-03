@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Photospace Responsive 2
+Plugin Name: Photospace Responsive
 Plugin URI: http://thriveweb.com.au/the-lab/photospace-responsive/
 Description: A simplified version of Photospace featuring a responsive only layout. This is a image gallery plugin for WordPress built using Galleriffic.
 <a href="http://www.twospy.com/galleriffic/>galleriffic</a>

@@ -426,8 +426,6 @@ class Photospace_Responsive_Gallery {
 		$thumb_style_on  = "{'opacity' : '1' , 'display' : 'inline-block', 'cursor' : 'pointer'}";
 		$thumb_style_off  = "{'opacity': '0.3' , 'display' : 'inline-block', 'cursor' : 'default'}";
 
-		$photospace_wp_plugin_path = site_url()."/wp-content/plugins/photospace-responsive";
-
 		$output_buffer ='
 			<div class="gallery_clear"></div>
 			<div id="gallery_'.$post_id.'" class="photospace_res">

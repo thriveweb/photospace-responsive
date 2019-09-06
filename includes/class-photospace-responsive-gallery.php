@@ -132,6 +132,7 @@ class Photospace_Responsive_Gallery {
 
 		// Add  short code overtides
 		add_shortcode( 'gallery', array( $this, 'photospace_responsive_shortcode' ) );
+		add_shortcode( 'photospace_res', array( $this, 'photospace_responsive_shortcode' ) );
 
 		// Add header scripts
 		add_action( 'wp_head', array( $this, 'photospace_responsive_wp_headers'), 10 );

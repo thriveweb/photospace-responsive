@@ -15,6 +15,10 @@ A simplified version of Photospace featuring a responsive only layout.
 Based on the Galleriffic gallery, Photospace takes advantage of the built in gallery features of WordPress.
 Then simply use the WordPress admin to create a gallery and insert it in the page. You may need to adjust the size of the gallery to suit your theme in the settings.
 
+Since WordPress 5 you need to embed the gallery using the classic editor.
+
+With the last major update, you will need re-save your settings. 
+
 The Photospace gallery plugin allows you to:
 
 * Upload multiple images at once

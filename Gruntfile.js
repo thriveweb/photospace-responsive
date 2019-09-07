@@ -7,9 +7,9 @@ module.exports = function( grunt ){
 
 		// setting folder templates
 		dirs: {
-			css: 'assets/css',
-			less: 'assets/css',
-			js: 'assets/js'
+			css: 'plugin-assets/css',
+			less: 'plugin-assets/css',
+			js: 'plugin-assets/js'
 		},
 
 		// Compile all .less files.

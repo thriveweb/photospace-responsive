@@ -80,6 +80,7 @@ class Photospace_Responsive_Gallery_Settings {
 
 		// Configure placement of plugin settings page. See readme for implementation.
 		add_filter( $this->base . 'menu_settings', array( $this, 'configure_settings' ) );
+
 	}
 
 	/**
@@ -217,7 +218,7 @@ class Photospace_Responsive_Gallery_Settings {
 
 				array(
 					'id'          => 'show_captions',
-					'label'       => __( 'Show Captions' ),
+					'label'       => __( 'Show Captions/Descriptions' ),
 					'description' => __( '', 'photospace-responsive-gallery' ),
 					'type'        => 'checkbox',
 					'default'     => 'false',
@@ -272,16 +273,7 @@ class Photospace_Responsive_Gallery_Settings {
 
 				array(
 					'id'          => 'thumbnail_width',
-					'label'       => __( 'Thumbnail', 'wordpress-plugin-template' ),
-					'description' => __( '', 'wordpress-plugin-template' ),
-					'type'        => 'number',
-					'default'     => '50',
-					'placeholder' => __( '', 'wordpress-plugin-template' ),
-				),
-
-				array(
-					'id'          => 'button_size',
-					'label'       => __( 'Button Size', 'wordpress-plugin-template' ),
+					'label'       => __( 'Thumbnail Width', 'wordpress-plugin-template' ),
 					'description' => __( '', 'wordpress-plugin-template' ),
 					'type'        => 'number',
 					'default'     => '50',
@@ -290,7 +282,16 @@ class Photospace_Responsive_Gallery_Settings {
 
 				array(
 					'id'          => 'thumbnail_height',
-					'label'       => __( 'Thumbnail Width', 'wordpress-plugin-template' ),
+					'label'       => __( 'Thumbnail Height', 'wordpress-plugin-template' ),
+					'description' => __( '', 'wordpress-plugin-template' ),
+					'type'        => 'number',
+					'default'     => '50',
+					'placeholder' => __( '', 'wordpress-plugin-template' ),
+				),
+
+				array(
+					'id'          => 'button_size',
+					'label'       => __( 'Paging Button Size', 'wordpress-plugin-template' ),
 					'description' => __( '', 'wordpress-plugin-template' ),
 					'type'        => 'number',
 					'default'     => '50',

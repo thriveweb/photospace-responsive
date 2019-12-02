@@ -137,6 +137,11 @@ class Photospace_Responsive_Gallery {
 		// Add header scripts
 		add_action( 'wp_head', array( $this, 'photospace_responsive_wp_headers'), 10 );
 
+		// Add custom image sizes
+		add_theme_support( 'post-thumbnails' );
+		add_image_size('photospace_responsive_thumbnails', get_option('psres_thumbnail_width') * 2, get_option('psres_thumbnail_height') * 2, get_option('psres_thumbnail_crop'));
+		add_image_size('photospace_responsive_full', get_option('psres_max_image_width'), get_option('psres_max_image_height') );
+
 		// Load API for generic admin functions.
 		if ( is_admin() ) {
 			$this->admin = new Photospace_Responsive_Gallery_Admin_API();

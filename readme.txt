@@ -5,8 +5,8 @@ Author URI: http://thriveweb.com.au/
 Plugin URI: http://thriveweb.com.au/the-lab/photospace-responsive/
 Tags: gallery, image gallery, website gallery, photoalbum, photogallery, photo, plugin, images, slideshow, short code, jQuery, photospace, Galleriffic, responsive
 Requires at least: 3.0
-Tested up to: 5.2.2
-Stable tag: 2.0.4
+Tested up to: 5.3.0
+Stable tag: 2.0.5
 
 A simplified version of Photospace featuring a responsive only layout.
 
@@ -17,7 +17,7 @@ Then simply use the WordPress admin to create a gallery and insert it in the pag
 
 Since WordPress 5 you need to embed the gallery using the classic editor.
 
-With the last major update, you will need re-save your settings. 
+Make a note of your settings as with the last major update, you will need re-save your settings.
 
 The Photospace gallery plugin allows you to:
 
@@ -52,6 +52,11 @@ See a [demo here](http://thriveweb.com.au/the-lab/photospace-responsive/ "Photos
 2. Screenshot Admin Area
 
 == Changelog ==
+
+= 2.0.5 =
+* Missing image size fix
+* Centre main image
+* Update meta and test
 
 = 2.0.4 =
 * Rename folder to fix SVN bug plugin-assets

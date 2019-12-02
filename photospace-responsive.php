@@ -6,7 +6,7 @@ Description: A simplified version of Photospace featuring a responsive only layo
 <a href="http://www.twospy.com/galleriffic/>galleriffic</a>
 Author: Dean Oakley
 Author URI: http://deanoakley.com/
-Version: 2.0.4
+Version: 2.0.5
 Text Domain: photospace-responsive
 */
 
@@ -51,7 +51,6 @@ function photospace_responsive_gallery() {
 	if ( is_null( $instance->settings ) ) {
 		$instance->settings = Photospace_Responsive_Gallery_Settings::instance( $instance );
 	}
-
 	return $instance;
 }
 

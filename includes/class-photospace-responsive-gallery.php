@@ -563,6 +563,9 @@ class Photospace_Responsive_Gallery {
 					$('.gal_content').css('display', 'block');
 					";
 
+					$psres_enable_history = ( get_option('psres_enable_history') == 'on')? 'true' : 'false';
+					$psres_auto_play = ( get_option('psres_auto_play') == 'on')? 'true' : 'false';
+
 					$output_buffer .= "
 
 					// Initialize Advanced Galleriffic Gallery
@@ -580,9 +583,9 @@ class Photospace_Responsive_Gallery {
 						renderNavControls:         false,
 						playLinkText:              '". get_option('psres_play_text') ."',
 						pauseLinkText:             '". get_option('psres_pause_text') ."',
-						enableHistory:              " . intval(get_option('psres_enable_history')) . ",
-						autoStart:                 	" . intval($auto_play) . ",
-						enableKeyboardNavigation:	true,
+						enableHistory:              " . $psres_enable_history . ",
+						autoStart:                 	" . $psres_auto_play . ",
+						enableKeyboardNavigation:		true,
 						syncTransitions:           	false,
 						defaultTransitionDuration: 	300,
 

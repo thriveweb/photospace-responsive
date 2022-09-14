@@ -445,7 +445,7 @@ class Photospace_Responsive_Gallery_Settings {
 	 */
 	public function settings_section( $section ) {
 		$html = '<p> ' . $this->settings[ $section['id'] ]['description'] . '</p>' . "\n";
-		echo $html; //phpcs:ignore
+		_e($html); //phpcs:ignore
 	}
 
 	/**
@@ -512,7 +512,7 @@ class Photospace_Responsive_Gallery_Settings {
 			$html         .= '</form>' . "\n";
 		$html             .= '</div>' . "\n";
 
-		echo $html; //phpcs:ignore
+		_e($html); //phpcs:ignore
 	}
 
 	/**

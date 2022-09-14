@@ -306,73 +306,10 @@ class Photospace_Responsive_Gallery {
 	 * @since   1.0.0
 	 */
 	public function photospace_responsive_wp_headers( $hook = '' ) {
-
-			echo "<!--	photospace [ START ] --> \n";
-			echo '<style type="text/css">';
-
-			if(get_option('psres_reset_css')){
-
-				echo '
-					/* reset */
-					.photospace_res img,
-					.photospace_res ul.thumbs,
-					.photospace_res ul.thumbs li,
-					.photospace_res ul.thumbs li a{
-						padding:0;
-						margin:0;
-						border:none !important;
-						background:none !important;
-					}
-					.photospace_res span{
-						padding:0;
-						margin:0;
-						border:none !important;
-						background:none !important;
-					}
-					';
-			}
-
-			echo '
-				.photospace_res ul.thumbs img {
-					width:'.get_option('psres_thumbnail_width') .'px;
-					height:'.get_option('psres_thumbnail_height') .'px;
-				}
-			';
-
-			//if(!empty(get_option('psres_button_size')))
-				echo '
-					.photospace_res .thumnail_row a.pageLink {
-						width:'.get_option('psres_button_size') .'px;
-						height:'.get_option('psres_button_size') .'px;
-						line-height: '.get_option('psres_button_size') .'px;
-					}
-				';
-
-			if(!empty(get_option('psres_thumbnail_margin')))
-				echo '	.photospace_res ul.thumbs li{
-							margin-bottom:'. get_option('psres_thumbnail_margin') .'px !important;
-							margin-right:'. get_option('psres_thumbnail_margin') .'px !important;
-						}
-
-						.photospace_res .next,
-						.photospace_res .prev{
-							margin-right:'. get_option('psres_thumbnail_margin') .'px !important;
-							margin-bottom:'. get_option('psres_thumbnail_margin') .'px !important;
-						}
-				';
-
-
-			if(get_option('psres_hide_thumbs')){
-				echo '
-					.photospace_res .thumnail_row{
-						display:none !important;
-					}
-				';
-			}
-
-			echo '</style>';
-			echo "<!--	photospace [ END ] --> \n";
-		}
+		ob_start();
+		include dirname(__FILE__) . '\photospace-responsive-wp-headers.php';
+		return ob_end_flush();
+	}
 
 
 	/**

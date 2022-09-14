@@ -232,7 +232,7 @@ class Photospace_Responsive_Gallery_Admin_API {
 			return $html;
 		}
 
-		echo $html; //phpcs:ignore
+		_e($html); //phpcs:ignore
 
 	}
 
@@ -299,7 +299,7 @@ class Photospace_Responsive_Gallery_Admin_API {
 			return;
 		}
 
-		echo '<div class="custom-field-panel">' . "\n";
+		_e('<div class="custom-field-panel">' . "\n");
 
 		foreach ( $fields as $field ) {
 
@@ -316,7 +316,7 @@ class Photospace_Responsive_Gallery_Admin_API {
 			}
 		}
 
-		echo '</div>' . "\n";
+		_e('</div>' . "\n");
 
 	}
 
@@ -335,7 +335,7 @@ class Photospace_Responsive_Gallery_Admin_API {
 
 		$field = '<p class="form-field"><label for="' . $field['id'] . '">' . $field['label'] . '</label>' . $this->display_field( $field, $post, false ) . '</p>' . "\n";
 
-		echo $field; //phpcs:ignore
+		_e($field); //phpcs:ignore
 	}
 
 	/**

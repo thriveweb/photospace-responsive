@@ -216,6 +216,8 @@ class Photospace_Responsive_Gallery {
 	 * @since   1.0.0
 	 */
 	public function enqueue_scripts() {
+		wp_register_script( $this->_token . '-migrate-min-frontend', esc_url( $this->assets_url ) . 'js/jquery-migrate.min.js', array( 'jquery' ), $this->_version, true );
+		wp_enqueue_script( $this->_token . '-migrate-min-frontend' );
 		wp_register_script( $this->_token . '-frontend', esc_url( $this->assets_url ) . 'js/frontend' . $this->script_suffix . '.js', array( 'jquery' ), $this->_version, true );
 		wp_enqueue_script( $this->_token . '-frontend' );
 	} // End enqueue_scripts ()
@@ -307,7 +309,7 @@ class Photospace_Responsive_Gallery {
 	 */
 	public function photospace_responsive_wp_headers( $hook = '' ) {
 		ob_start();
-		include dirname(__FILE__) . '\photospace-responsive-wp-headers.php';
+		require(dirname(__FILE__) . '/photospace-responsive-wp-headers.php');
 		return ob_end_flush();
 	}
 

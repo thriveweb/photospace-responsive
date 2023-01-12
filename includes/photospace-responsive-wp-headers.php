@@ -53,5 +53,5 @@
     }
 <?php } ?>
 
-</style>;
+</style>
 <!--	photospace [ END ] --> 

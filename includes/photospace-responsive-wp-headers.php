@@ -1,4 +1,3 @@
-
 <!--	photospace [ START ] -->
 <style type="text/css">
 <?php if(get_option('psres_reset_css')){ ?>
@@ -53,5 +52,5 @@
     }
 <?php } ?>
 
-</style>;
+</style>
 <!--	photospace [ END ] --> 

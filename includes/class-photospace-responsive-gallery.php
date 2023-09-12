@@ -139,8 +139,15 @@ class Photospace_Responsive_Gallery {
 
 		// Add custom image sizes
 		add_theme_support( 'post-thumbnails' );
-		add_image_size('photospace_responsive_thumbnails', get_option('psres_thumbnail_width') * 2, get_option('psres_thumbnail_height') * 2, get_option('psres_thumbnail_crop'));
-		add_image_size('photospace_responsive_full', get_option('psres_max_image_width'), get_option('psres_max_image_height') );
+
+		$psres_thumbnail_width  = intval(get_option('psres_max_image_width'));
+		$psres_thumbnail_height = intval(get_option('psres_max_image_height'));		
+		$psres_thumbnail_crop  = (get_option('psres_thumbnail_crop') == 'on')? true : false;
+		$psres_max_image_width = intval(get_option('psres_max_image_width'));
+		$psres_max_image_height = intval(get_option('psres_max_image_height'));
+
+		add_image_size('photospace_responsive_thumbnails', $psres_thumbnail_width * 2, $psres_thumbnail_height * 2, $psres_thumbnail_crop);
+		add_image_size('photospace_responsive_full', $psres_max_image_width, $psres_max_image_height );
 
 		// Load API for generic admin functions.
 		if ( is_admin() ) {
@@ -329,8 +336,6 @@ class Photospace_Responsive_Gallery {
 		global $post;
 		global $photospace_res_count;
 
-
-
 		if ( ! empty( $atts['ids'] ) ) {
 			// 'ids' is explicitly ordered, unless you specify otherwise.
 			if ( empty( $atts['orderby'] ) )
@@ -338,15 +343,24 @@ class Photospace_Responsive_Gallery {
 			$atts['include'] = $atts['ids'];
 		}
 
+		$num_thumb = intval(get_option('psres_num_thumb'));
+		$num_preload = intval(get_option('psres_num_thumb'));
+		$show_captions = filter_var(get_option('psres_show_captions'), FILTER_VALIDATE_BOOLEAN);
+		$show_controls = filter_var(get_option('psres_show_controls'), FILTER_VALIDATE_BOOLEAN);
+		$auto_play = filter_var(get_option('psres_auto_play'), FILTER_VALIDATE_BOOLEAN);
+		$hide_thumbs = filter_var(get_option('psres_hide_thumbs'), FILTER_VALIDATE_BOOLEAN);
+
+		$delay = intval(get_option('psres_delay'));
+
 		extract(shortcode_atts(array(
-			'id' 				=> intval($post->ID),
-			'num_thumb' 		=> get_option('psres_num_thumb'),
-			'num_preload' 		=> get_option('psres_num_thumb'),
-			'show_captions' 	=> get_option('psres_show_captions'),
-			'show_controls' 	=> get_option('psres_show_controls'),
-			'auto_play' 		=> get_option('psres_auto_play'),
-			'delay' 			=> get_option('psres_delay'),
-			'hide_thumbs' 		=> get_option('psres_hide_thumbs'),
+			'id' => intval($post->ID),
+			'num_thumb' => $num_thumb,
+			'num_preload' => $num_preload,
+			'show_captions' => $show_captions,
+			'show_controls' => $show_controls,
+			'auto_play' => $auto_play,
+			'delay' => $delay,
+			'hide_thumbs' => $hide_thumbs,
 			'horizontal_thumb' 	=> 0,
 			'order'      => 'ASC',
 			'orderby'    => 'menu_order ID',
@@ -520,8 +534,8 @@ class Photospace_Responsive_Gallery {
 						loadingContainerSel:       '#loading_".$post_id."',
 						renderSSControls:          true,
 						renderNavControls:         false,
-						playLinkText:              '". get_option('psres_play_text') ."',
-						pauseLinkText:             '". get_option('psres_pause_text') ."',
+						playLinkText:              '". esc_js(get_option('psres_play_text')) ."',
+						pauseLinkText:             '". esc_js(get_option('psres_pause_text')) ."',
 						enableHistory:              " . $psres_enable_history . ",
 						autoStart:                 	" . $psres_auto_play . ",
 						enableKeyboardNavigation:		true,
@@ -564,7 +578,7 @@ class Photospace_Responsive_Gallery {
 
 					";
 
-					if (get_option('psres_enable_history')) {
+					if ( (bool) get_option('psres_enable_history')) {
 
 						$output_buffer .= "
 

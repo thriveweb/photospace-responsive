@@ -1,13 +1,13 @@
 <?php
 /*
 Plugin Name: Photospace Responsive
-Plugin URI: http://thriveweb.com.au/the-lab/photospace-responsive/
-Description: A simplified version of Photospace featuring a responsive only layout. This is a image gallery plugin for WordPress built using Galleriffic.
-<a href="http://www.twospy.com/galleriffic/>galleriffic</a>
+Plugin URI: https://thriveweb.com.au/the-lab/photospace-responsive/
+Description: Responsive image galleries with a large main image, thumbnail navigation and captions, built using Galleriffic.
 Author: Dean Oakley
-Author URI: http://deanoakley.com/
-Version: 2.2.2
+Author URI: https://deanoakley.com/
+Version: 2.2.3
 Text Domain: photospace-responsive
+Requires at least: 3.0
 */
 
 /*  Copyright 2010  Dean Oakley  (email : dean@thriveweb.com.au)
@@ -30,6 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/** Keep the plugin header and asset version in sync. */
+define( 'PHOTOSPACE_RESPONSIVE_VERSION', '2.2.3' );
+
 // Load plugin class files.
 require_once 'includes/class-photospace-responsive-gallery.php';
 require_once 'includes/class-photospace-responsive-gallery-settings.php';
@@ -46,7 +49,7 @@ require_once 'includes/lib/class-photospace-responsive-gallery-taxonomy.php';
  * @return object Photospace_Responsive_Gallery
  */
 function photospace_responsive_gallery() {
-	$instance = Photospace_Responsive_Gallery::instance( __FILE__, '1.0.0' );
+	$instance = Photospace_Responsive_Gallery::instance( __FILE__, PHOTOSPACE_RESPONSIVE_VERSION );
 
 	if ( is_null( $instance->settings ) ) {
 		$instance->settings = Photospace_Responsive_Gallery_Settings::instance( $instance );

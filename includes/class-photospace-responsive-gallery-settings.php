@@ -90,6 +90,15 @@ class Photospace_Responsive_Gallery_Settings {
 	 */
 	public function init_settings() {
 		$this->settings = $this->settings_fields();
+
+		// Seed missing defaults while preserving settings already saved by the user.
+		foreach ( $this->settings as $section ) {
+			foreach ( $section['fields'] as $field ) {
+				if ( isset( $field['default'] ) ) {
+					add_option( $this->base . $field['id'], $field['default'] );
+				}
+			}
+		}
 	}
 
 	/**

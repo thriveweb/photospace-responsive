@@ -140,11 +140,11 @@ class Photospace_Responsive_Gallery {
 		// Add custom image sizes
 		add_theme_support( 'post-thumbnails' );
 
-		$psres_thumbnail_width  = intval(get_option('psres_max_image_width'));
-		$psres_thumbnail_height = intval(get_option('psres_max_image_height'));		
-		$psres_thumbnail_crop  = (get_option('psres_thumbnail_crop') == 'on')? true : false;
-		$psres_max_image_width = intval(get_option('psres_max_image_width'));
-		$psres_max_image_height = intval(get_option('psres_max_image_height'));
+		$psres_thumbnail_width  = intval(get_option('psres_thumbnail_width', 50));
+		$psres_thumbnail_height = intval(get_option('psres_thumbnail_height', 50));		
+		$psres_thumbnail_crop  = filter_var(get_option('psres_thumbnail_crop', 'true'), FILTER_VALIDATE_BOOLEAN);
+		$psres_max_image_width = intval(get_option('psres_max_image_width', 500));
+		$psres_max_image_height = intval(get_option('psres_max_image_height', 600));
 
 		add_image_size('photospace_responsive_thumbnails', $psres_thumbnail_width * 2, $psres_thumbnail_height * 2, $psres_thumbnail_crop);
 		add_image_size('photospace_responsive_full', $psres_max_image_width, $psres_max_image_height );
@@ -516,8 +516,8 @@ class Photospace_Responsive_Gallery {
 					$('.gal_content').css('display', 'block');
 					";
 
-					$psres_enable_history = ( get_option('psres_enable_history') == 'on')? 'true' : 'false';
-					$psres_auto_play = ( get_option('psres_auto_play') == 'on')? 'true' : 'false';
+					$psres_enable_history = filter_var(get_option('psres_enable_history'), FILTER_VALIDATE_BOOLEAN)? 'true' : 'false';
+					$psres_auto_play = filter_var(get_option('psres_auto_play'), FILTER_VALIDATE_BOOLEAN)? 'true' : 'false';
 
 					$output_buffer .= "
 
@@ -578,7 +578,7 @@ class Photospace_Responsive_Gallery {
 
 					";
 
-					if ( (bool) get_option('psres_enable_history')) {
+					if ( filter_var(get_option('psres_enable_history'), FILTER_VALIDATE_BOOLEAN)) {
 
 						$output_buffer .= "
 

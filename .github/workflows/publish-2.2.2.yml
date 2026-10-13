@@ -1,0 +1,42 @@
+# Publish the authorised Photospace Responsive 2.2.2 release.
+name: Publish Photospace Responsive 2.2.2
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/publish-2.2.2.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Tag and publish 2.2.2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out plugin
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create release tag
+        run: |
+          # Create the release tag once and deploy the tagged files on retries.
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git rev-parse "refs/tags/2.2.2" >/dev/null 2>&1; then
+            git checkout refs/tags/2.2.2
+          else
+            git tag -a 2.2.2 -m "Photospace Responsive 2.2.2"
+            git push origin 2.2.2
+          fi
+
+      - name: Deploy to WordPress.org
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          VERSION: 2.2.2
+          SLUG: photospace-responsive
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}

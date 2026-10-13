@@ -6,7 +6,7 @@ Plugin URI: http://thriveweb.com.au/the-lab/photospace-responsive/
 Tags: gallery, image gallery, website gallery, photoalbum, photogallery, photo, plugin, images, slideshow, short code, jQuery, photospace, Galleriffic, responsive
 Requires at least: 3.0
 Tested up to: 6.3.1
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 
 A simplified version of Photospace featuring a responsive only layout.
 
@@ -52,6 +52,9 @@ See a [demo here](http://thriveweb.com.au/the-lab/photospace-responsive/ "Photos
 2. Screenshot Admin Area
 
 == Changelog ==
+
+= 2.2.1 =
+* Update the plugin release version to 2.2.1. No gallery behaviour changes.
 
 = 2.2.0 =
 * security update with better sanitization

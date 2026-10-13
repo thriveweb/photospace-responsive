@@ -1,0 +1,7 @@
+# Keep repository metadata and the directory icon out of the plugin package.
+/.git
+/.github
+/.DS_Store
+/.travis.yml
+/assets
+/.distignore

@@ -1,6 +1,6 @@
 <!--	photospace [ START ] -->
 <style type="text/css">
-<?php if(get_option('psres_reset_css')){ ?>
+<?php if(filter_var(get_option('psres_reset_css'), FILTER_VALIDATE_BOOLEAN)){ ?>
 
     /* reset */
     .photospace_res img,
@@ -45,7 +45,7 @@
     }
 <?php } ?>
 
-<?php if((bool) get_option('psres_hide_thumbs')){ ?>
+<?php if(filter_var(get_option('psres_hide_thumbs'), FILTER_VALIDATE_BOOLEAN)){ ?>
     .photospace_res .thumnail_row {
         display:none !important;
     }

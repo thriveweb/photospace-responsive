@@ -1,12 +1,12 @@
 === Photospace Responsive Gallery ===
 Contributors: deanoakley
 Author: Dean Oakley
-Author URI: http://thriveweb.com.au/
-Plugin URI: http://thriveweb.com.au/the-lab/photospace-responsive/
+Author URI: https://thriveweb.com.au/
+Plugin URI: https://thriveweb.com.au/the-lab/photospace-responsive/
 Tags: gallery, image gallery, website gallery, photoalbum, photogallery, photo, plugin, images, slideshow, short code, jQuery, photospace, Galleriffic, responsive
 Requires at least: 3.0
-Tested up to: 6.3.1
-Stable tag: 2.2.2
+Tested up to: 7.1.3
+Stable tag: 2.2.3
 
 A simplified version of Photospace featuring a responsive only layout.
 
@@ -52,6 +52,13 @@ See a [demo here](http://thriveweb.com.au/the-lab/photospace-responsive/ "Photos
 2. Screenshot Admin Area
 
 == Changelog ==
+
+= 2.2.3 =
+* Update compatibility metadata after testing with WordPress 7.1.3 and PHP 8.4.
+* Refresh the WordPress.org banners and plugin icons.
+* Keep the runtime and asset version aligned with the plugin release.
+* Initialise missing settings defaults while preserving saved preferences.
+* Use thumbnail settings for thumbnail image sizes and interpret checkbox values consistently.
 
 = 2.2.2 =
 * Update the plugin release version to 2.2.2. No gallery behaviour changes.
